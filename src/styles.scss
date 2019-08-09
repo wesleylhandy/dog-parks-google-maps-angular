@@ -1,0 +1,197 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import "./variables";
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    @media screen and (max-width:823px){
+        margin-top: 100px;
+    }
+    @media screen and (max-width:767px){
+        font-size: 16px;
+    }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 100%;
+}
+
+main {
+    margin-bottom: 45px;
+    flex: 1 0 100%;
+    min-height: calc(100vh - 260px);
+}
+
+a {
+    color: $secondary;
+    transition: color 200ms ease-in-out;
+}
+
+a:hover, a:active, a:focus {
+    color: darken($secondary, 10%);
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    max-width:1200px;
+    padding: 0 20px;
+}
+
+header {
+    background: $primary;
+    box-sizing: border-box;
+    padding: 0;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    @media screen and (max-width: 823px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 50;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        white-space: nowrap;
+        padding:1em 0;
+
+    }
+
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        a {
+            padding: 1em;
+            white-space: nowrap;
+            transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+            &:hover, &:active, &:focus {
+                color: $tertiary;
+                background: darken($primary, 10%);
+            }
+            @media screen and (max-width: 823px) {
+                padding: 1em 0.8em;
+            }
+        }
+        &.mobile-navigation {
+            display: none;
+            @media screen and (max-width: 767px) {
+                display: flex;
+            }
+            .dropdown-content {
+                position: relative;
+                display: inline-block;
+            }
+            input[type="checkbox"]{
+                position: absolute !important;
+                left: -9999px !important;
+                & + label {
+                    background-color: transparent;
+                    color: #fff;
+                    text-align: center;
+                    border: none;
+                    font-size: 30px;
+                    padding: 0.4em 1em;
+                    position: relative;
+                    display: block;
+                    cursor: pointer;
+                    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+                    &:hover {
+                        color: $tertiary;
+                        text-shadow: 2px 2px black;
+                        background-color: darken($primary, 10%);
+                    }
+                }
+                & ~ div.dropdown-links {
+                    box-sizing: border-box;
+                    display: none;
+                    position: absolute;
+                    background-color: $secondary;
+                    z-index: 5;
+                    text-align: center;
+                    margin-top: 0;
+                    right: -20px;
+                    width: 100vw;
+                    height: 100vh;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    a {
+                        box-sizing: border-box;
+                        font-size: 24px;
+                        color: #fff;
+                        background-color: $secondary;
+                        padding: .6em 0;
+                        text-decoration: none;
+                        display: block;
+                        cursor: pointer;
+                        width: 100%;
+                    }
+                    a:hover,
+                    a[aria-current] {
+                        color: $tertiary;
+                        background-color: darken($secondary, 10%);
+                    }
+                }
+                &:checked ~ div.dropdown-links {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                }
+                &:checked + label {
+                  color: #fcd687;
+                  text-shadow: 2px 2px black;
+                  background-color: darken($primary, 10%);
+                }
+                
+            }
+        }
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+h1 {
+    margin-top: 1em;
+    @media screen and (max-width:767px){
+
+    }
+}
+h2 {
+    @media screen and (max-width:767px){
+
+    }
+}
+
+footer {
+    align-self: flex-end;
+    background: $primary;
+    color: white;
+    padding: 30px 0;
+    p {
+        text-align: center;
+    }
+}

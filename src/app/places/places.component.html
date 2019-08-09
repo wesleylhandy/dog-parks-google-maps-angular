@@ -1,0 +1,18 @@
+<section class="places-container">
+    <div class="place" *ngFor="let place of placeService.placesList">
+        <ng-template [ngIf]="place.photos && place.photos.length > 0" [ngIfElse]="unsplash">
+            <div class="place__img" >
+                <img class="img-responsive" [src]="place.photos[0].getUrl()">
+            </div>
+        </ng-template>
+        <ng-template #unsplash>
+            <div class="place__img">
+                <img class="img-responsive" src="https://source.unsplash.com/400x400/?puppies">
+            </div>
+        </ng-template>
+        <h2>{{ place.name | uppercase}}</h2>
+        <div class="place__address">
+            {{ place.formatted_address }}
+        </div>
+    </div>
+</section>

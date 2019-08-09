@@ -1,0 +1,55 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <div class="container">
+    <a href="#" class="logo" routerLink="/">Dog Park</a>
+    <nav>
+
+        <a href="#" routerLink="/map/parks">Parks</a>
+        <a href="#" routerLink="/map/pet-stores">Pet Stores</a>
+        <a href="#" routerLink="/map/kennels">Kennels</a>
+        <a href="#" routerLink="/map/vets">Veterinarians</a>
+        <a href="#" routerLink="/map/breeders">Breeders</a>
+        <a href="#" routerLink="/map/trainers">Trainers</a>
+
+    </nav>
+    <nav class="mobile-navigation">
+      <div class="dropdown-content">
+          <input 
+            type="checkbox" 
+            id="dropcheck" 
+            name="dropcheck" 
+            [attr.aria-label]="checked ? 'Click to Hide Menu' : 'Click to Show Menu'"
+            [checked]="checked"
+            (change)="toggleChecked()"
+          />
+          <label for="dropcheck">
+            <ng-template [ngIf]="checked" [ngIfElse]="unchecked">
+              <fa-icon [icon]="faTimes"></fa-icon>
+            </ng-template>
+            <ng-template #unchecked>
+              <fa-icon [icon]="faChevronDown"></fa-icon>
+            </ng-template>
+          </label>
+          <div class="dropdown-links">
+            <a href="#" routerLink="/" (click)="toggleChecked()">Home</a>
+            <a href="#" routerLink="/map/parks" (click)="toggleChecked()">Parks</a>
+            <a href="#" routerLink="/map/pet-stores" (click)="toggleChecked()">Pet Stores</a>
+            <a href="#" routerLink="/map/kennels" (click)="toggleChecked()">Kennels</a>
+            <a href="#" routerLink="/map/vets" (click)="toggleChecked()">Veterinarians</a>
+            <a href="#" routerLink="/map/breeders" (click)="toggleChecked()">Breeders</a>
+            <a href="#" routerLink="/map/trainers" (click)="toggleChecked()">Trainers</a>
+          </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <p><fa-icon [icon]="faCopyright"></fa-icon> {{ date }}. Made with <fa-icon [icon]="faCoffee"></fa-icon> by Wesley L. Handy</p>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+<h1>Nearby {{ textQuery }}</h1>
+<div id="map" #map></div>
+
+<section class="form-container">
+    <form (submit)="updateLocation($event)">
+        <div class="form-group">
+            <label for="location-query">New Address, City, or Zip Code</label>
+            <input id="location-query" name="location-query" type="text" [(ngModel)]="locationQuery" class="form-control" placeholder="ie. Virginia Beach or 23456"/>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</section>
+
+<app-places></app-places>

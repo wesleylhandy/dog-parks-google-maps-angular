@@ -1,0 +1,31 @@
+.places-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: calc(100% + 10px);
+    margin: 0 -5px;
+    .place {
+        box-sizing: border-box;
+        border-radius: 10px;
+        margin: 10px 5px;
+        padding: 20px;
+        background: #ededed;
+        width: calc(33% - 20px);
+        @media screen and (max-width: 767px) {
+            width: calc(50% - 20px); 
+        }
+        @media screen and (max-width: 444px) {
+            width: calc(100% - 10px); 
+        }
+    }
+    .place__img {
+        max-height: 200px;
+        overflow: hidden;
+    }
+    .img-responsive {
+        max-width: 100%;
+        display: block;
+    }
+}
