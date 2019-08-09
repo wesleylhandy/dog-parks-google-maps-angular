@@ -11,7 +11,7 @@ export class PlacesComponent implements OnInit {
 
   places: google.maps.places.PlaceResult[];
 
-  constructor(private placeService: PlaceService) { }
+  constructor(public placeService: PlaceService) { }
 
   ngOnInit() {
     this.getPlaces();
