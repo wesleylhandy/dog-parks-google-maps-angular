@@ -12,7 +12,7 @@
         </ng-template>
         <h2>{{ place.name | uppercase}}</h2>
         <div class="place__address">
-            {{ place.formatted_address }}
+            <a href="https://www.google.com/maps/dir/?api=1&destination={{place.formatted_address}}&dir_action=navigate" target="_new">{{ place.formatted_address }}</a>
         </div>
     </div>
 </section>

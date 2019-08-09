@@ -137,7 +137,11 @@ export class MapComponent implements OnInit {
             placeResult.name + 
           '</div>' +
           '<div>' +
-            placeResult.formatted_address +
+          '<a href="https://www.google.com/maps/dir/?api=1&destination=' + 
+            placeResult.formatted_address + 
+            '&dir_action=navigate" target="_blank">' + 
+            placeResult.formatted_address + 
+            '</a>' +
           '</div></div>');
         infoWindow.open(this.map,marker);
       });
