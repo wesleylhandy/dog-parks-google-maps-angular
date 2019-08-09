@@ -1,3 +1,7 @@
+<div class="static-nav" *ngIf="textQuery != 'Dog Parks'">
+    <a href="#" routerLink="/map/parks">Find a Dog Park <fa-icon [icon]="faSearch"></fa-icon></a>
+</div>
+
 <h1>Nearby {{ textQuery }}</h1>
 <div id="map" #map></div>
 

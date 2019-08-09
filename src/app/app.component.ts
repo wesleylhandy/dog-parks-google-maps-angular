@@ -13,6 +13,7 @@ export class AppComponent {
   faChevronDown = faChevronDown;
   faCopyright = faCopyright;
   faCoffee = faCoffee;
+  
   date: Number;
 
   toggleChecked():void {

@@ -1,5 +1,11 @@
 @import "../../variables";
 
+.static-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+}
+
 #map {
     margin-top: 30px;
     width:100%;

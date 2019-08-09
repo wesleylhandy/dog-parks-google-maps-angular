@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label for="dog-number">How many dogs do you have?</label>
-        <input id="dog number" type="number" min="0" [(ngModel)]="dogNumber" placeholder="0">
+        <input id="dog number" type="number" min="0" [(ngModel)]="dogNumber" (change)="updateNum($event)">
     </div>
     <div [ngSwitch]="dogNumber">
     
@@ -20,6 +20,6 @@
         <p *ngSwitchDefault>Wow! You own <span>{{dogNumber}}</span> dogs!! Amazing! Maybe you need to find a <a href="#" routerLink="/map/trainers">Trainer</a>, <a href="#" routerLink="/map/vets">Vet</a>, or <a href="#" routerLink="/map/kennels">Kennel</a></p>
 
     </div>
-    <p>But maybe all you want to do is search for <a href="#" routerLink="/map/parks">dog parks near your house</a></p>
+    <p class="emphasis">But maybe all you want to do is search for <a href="#" routerLink="/map/parks">dog parks near your house</a>!</p>
 
 </div>

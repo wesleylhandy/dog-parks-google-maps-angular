@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PlaceService } from '../place.service';
@@ -21,6 +22,7 @@ export class MapComponent implements OnInit {
   textQuery: string;
   searchType: string;
   locationQuery: string;
+  faSearch = faSearch;
 
   constructor(private ngZone: NgZone,   
     private route: ActivatedRoute,

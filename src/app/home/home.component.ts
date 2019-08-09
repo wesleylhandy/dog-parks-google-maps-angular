@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogService } from '../dog.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  dogNumber: Number = 0;
+  dogNumber: Number;
 
-  constructor() { }
+  constructor(private dogService: DogService) { }
 
   ngOnInit() {
+    this.getNumber()
+  }
+
+  getNumber() :void{
+    this.dogService.getNumber().subscribe(num => {
+      this.dogNumber = num;
+    })
+  }
+
+  updateNum(event){
+    event.preventDefault();
+    this.dogService.updateNum(this.dogNumber)
   }
 
 }
